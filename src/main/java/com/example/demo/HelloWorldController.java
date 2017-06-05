@@ -13,4 +13,9 @@ public class HelloWorldController {
     public String index() {
         return "Hello World";
     }
+
+    @RequestMapping("/getUser")
+    public String getUser() {
+        return "user";
+    }
 }
