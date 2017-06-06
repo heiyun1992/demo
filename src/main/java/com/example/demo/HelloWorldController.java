@@ -11,11 +11,11 @@ public class HelloWorldController {
 
     @RequestMapping("/hello")
     public String index() {
-        return "Hello World";
+        return "Hello World!";
     }
 
     @RequestMapping("/getUser")
     public String getUser() {
-        return "user";
+        return "user!";
     }
 }
