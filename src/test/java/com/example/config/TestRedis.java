@@ -12,6 +12,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -35,7 +37,10 @@ public class TestRedis {
 
     @Test
     public void testObj() throws Exception {
-        User user=new User("aa@126.com", "aa", "aa123456", "aa","123");
+        Date date=new Date();
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
+        String formattedDate = dateFormat.format(date);
+        User user=new User("aa1", "aa@126.com", "aa", "aa123456",formattedDate);
         ValueOperations<String, User> operations=redisTemplate.opsForValue();
         operations.set("com.neox", user);
         operations.set("com.neo.f", user,1, TimeUnit.SECONDS);
@@ -49,6 +54,8 @@ public class TestRedis {
         }
         // Assert.assertEquals("aa", operations.get("com.neo.f").getUserName());
     }
+
+
 
 
 
