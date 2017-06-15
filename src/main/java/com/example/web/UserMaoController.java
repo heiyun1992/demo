@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/userMao")
 public class UserMaoController {
-
+/*
     @Autowired
     private UserMapper userMapper;
 
@@ -44,5 +44,5 @@ public class UserMaoController {
     @RequestMapping(value="/delete/{id}")
     public void delete(@PathVariable("id") Long id) {
         userMapper.delete(id);
-    }
+    }*/
 }
