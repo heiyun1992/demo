@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class SchedulerTask {
     private int count=0;
 
-    @Scheduled(cron="*/6 * * * * ?")
+    @Scheduled(cron="*/60 * * * * ?")
     private void process(){
         System.out.println("this is scheduler task runing  "+(count++));
     }
